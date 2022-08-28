@@ -1,31 +1,19 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  * La clase "Materia" representa una materia ordinaria o de especialidad segun
  * el plan reticular del "Instituto Tecnologico De Oaxaca" (ITO)
  * @author Limni Jafet Morales Morales (JafetD438)
- * @version 1.0 (02/08/22)
+ * @version 2.0 (27/08/22)
  */
-public class Materia {
-    private final String name;
-    private String cadenaCon;
+public class Materia extends JButton{
+    private final String name, cadenaCon;
     private final int semester, credits;
     private int status;
     private final boolean isCadena;
-
-    /**
-     * Contructor de la clase Materia (Sin cadena)
-     * @param nombre    nombre de la Materia
-     * @param semestre  Semestre de la Materia
-     * @param creditos  Cantidad de creditos de la materia
-     * @param estado    Estado de la Materia
-     * @param esCadena  Si tiene cadena con algun otra Materia (En este constructor, es NO)
-     */
-    public Materia(String nombre, int semestre, int creditos, int estado, boolean esCadena){
-        this.name = nombre;
-        this.semester = semestre;
-        this.credits = creditos;
-        this.status = estado;
-        this.isCadena = esCadena;
-    }
 
     /**
      * Contructuctor de la clase Materia (Con cadena)
@@ -38,13 +26,20 @@ public class Materia {
      * @param cadenaCon La Materia con la que es cadena esta misma Materia.
      */
     public Materia(String nombre, int semestre, int creditos, int estado, boolean esCadena, String cadenaCon){
+        /* Propiedades Materia */
         this.name = nombre;
         this.semester = semestre;
         this.credits = creditos;
         this.status = estado;
         this.isCadena = esCadena;
         this.cadenaCon = cadenaCon;
+        /* Propiedades JButton*/
+        this.setText("<html><center>"+getName());
+        this.setSize(100,50);
+        this.click_status();
     }
+
+    /* ----------------------- Inicio de propieades de la Materia ----------------------- */
 
     /**
      * Devuelve el nombre de la materia.
@@ -128,4 +123,127 @@ public class Materia {
         else
             return cadenaCon;
     }
+
+    /**
+     * Muestra en una ventana Emergente toda la información acerca de la Materia.
+     * @return Información Gral.
+     */
+    public String getInfo(){
+        return "Materia: "+getName();
+    }
+
+
+    /* ----------------------- Fin de propiedades de la materia ------------------------ */
+    // --------------------------------------------------------------------------------- //
+    /* ------------------------ Inicio propiedades del JButton ------------------------- */
+
+    /**
+     * Cambia el color del JButtton recibiendo 3 números enteros como parametros
+     * para pasarlos nuevamente como parametros para crear un Color.
+     * @param R Red
+     * @param G Green
+     * @param B Blue
+     */
+    private void setColor(int R, int G, int B){
+        this.setBackground(new Color(R,G,B));
+    }
+
+    /**
+     * El metodo click_status agrega un evento al JButton para que muestre un JFrame.
+     */
+    private void click_status(){
+        this.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame v = ventanaEstado();
+            }
+        });
+    }
+
+    /**
+     * Crea una ventana con todos los estados que puede tener una Materia,
+     * los cuales se pueden seleccionar, cambiando su estado de la Materia
+     * y cambiando el color del JButon según sea el caso.
+     * @return Una ventana temporal.
+     */
+    private JFrame ventanaEstado(){
+        JFrame ventana2 = new JFrame("Estado");
+
+        ventana2.setSize(300,400);
+        ventana2.setLocationRelativeTo(null);
+        ventana2.setLayout(null);
+
+        ButtonGroup group = new ButtonGroup();
+
+        JRadioButton btn1 = new JRadioButton("Cursando");
+        btn1.setBounds(25,20,200,30);
+        JRadioButton btn2 = new JRadioButton("Acreditada");
+        btn2.setBounds(25,50,200,30);
+        JRadioButton btn3 = new JRadioButton("Cursada Sin Acreditar");
+        btn3.setBounds(25,80,200,30);
+        JRadioButton btn4 = new JRadioButton("Reprobada Cursando");
+        btn4.setBounds(25,110,200,30);
+        JRadioButton btn5 = new JRadioButton("A Curso Especial");
+        btn5.setBounds(25,140,200,30);
+        JRadioButton btn6 = new JRadioButton("Especial: Cursando");
+        btn6.setBounds(25,170,200,30);
+        JRadioButton btn7 = new JRadioButton("Información");
+        btn7.setBounds(25,200,200,30);
+
+        group.add(btn1);
+        group.add(btn2);
+        group.add(btn3);
+        group.add(btn4);
+        group.add(btn5);
+        group.add(btn6);
+        group.add(btn7);
+
+        JButton btn = new JButton("Aceptar");
+        btn.setBounds(100,300,85,40);
+
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(btn1.isSelected()){
+                    setColor(149,76,199);
+                    ventana2.dispose();
+                } else if(btn2.isSelected()) {
+                    setColor(30,188,150);
+                    ventana2.dispose();
+                } else if(btn3.isSelected()) {
+                    setColor(253,240,109);
+                    ventana2.dispose();
+                } else if(btn4.isSelected()) {
+                    setColor(226,52,167);
+                    ventana2.dispose();
+                } else if(btn5.isSelected()) {
+                    setColor(252,149,64);
+                    ventana2.dispose();
+                } else if(btn6.isSelected()) {
+                    setColor(225,66,66);
+                    ventana2.dispose();
+                } else if (btn7.isSelected()) {
+                    JOptionPane.showMessageDialog(null, getInfo());
+                    ventana2.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "No Seleccionaste Nada");
+                    ventana2.dispose();
+                }
+            }
+        });
+
+        ventana2.add(btn1);
+        ventana2.add(btn2);
+        ventana2.add(btn3);
+        ventana2.add(btn4);
+        ventana2.add(btn5);
+        ventana2.add(btn6);
+        ventana2.add(btn7);
+        ventana2.add(btn);
+
+        ventana2.setVisible(true);
+        return ventana2;
+    }
+
+    /* ------------------------ Fin de propiedades del JButton ------------------------- */
 }
