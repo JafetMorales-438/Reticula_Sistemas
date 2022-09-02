@@ -1,59 +1,56 @@
-Cálculo Diferencial,1,5,0
-Fundamentos de Programación,1,5,0
-Taller de Ética,1,4,0
-Matemáticas Discretas,1,5,0
-Taller de Administración,1,4,0
-Fundamentos de Investigación,1,4,0
-
-Cálculo Integral,2,5,0
-Programación Orientada a Objetos,2,5,0
-Contabilidad Financiera,2,4,0
-Química,2,4,0
-Algebra Lineal,2,5,0
-Probabilidad y Estadística,2,5,0
-
-Cálculo Vectorial,3,5,0
-Estructura de Datos,3,5,0
-Cultura Empresarial,3,4,0
-Investigación De Operaciones,3,4,0
-Sistemas Operativos,3,4,0
-Física General,3,5,0
-
-Ecuaciones Diferenciales,4,5,0
-Métodos Numéricos,4,4,0
-Tópicos Avanzados de Programación,4,5,0
-Fundamentos de Bases De Datos,4,5,0
-Taller De Sistemas Operativos,4,4,0
-Principios Eléctricos y Aplicaciones Digitales,4,5,0
-
-Desarrollo Sustentable,5,5,0
-Fundamentos De Telecomunicaciones,5,4,0
-Taller de Base de Datos,5,4,0
-Simulación,5,5,0
-Fundamentos de Ingeniería de Software,5,4,0
-Arquitectura de Computadoras,5,5,0
-
-Lenguajes y Automatas 1,6,5,0
-Redes de Computadoras,6,5,0
-Administración de Bases de Datos,6,5,0
-Graficación,6,4,0
-Ingeniería de Software,6,5,0
-Lenguajes de Interfaz,6,4,0
-Fundamentos de Inteligencia de Negocios en la Gestión Empresaria,6,5,0
-
-Lenguajes y Automatas 2,7,5,0
-Conmutación y Enrutamiento de Redes de Datos,7,5,0
-Taller de Investigación 1,7,4,0
-Tópicos De Ciencia de Datos,7,5,0
-Programación Web,7,5,0
-Programación Lógica y Funcional,7,4,0
-
-Administración de Redes,8,4,0
-Taller de Investigación 2,8,4,0
-Gestión de Proyectos de Software,8,6,0
-Desarrollo de Software Orientado a Servicios,8,5,0
-Sistemas Programables,8,4,0
-
-Inteligencia Artificial,9,4,0
-Tecnologías Emergentes para el Desarrollo de Aplicaciones de Software,9,5,0
-Desarrollo de Software Empresarial con Patrones de Diseño,9,5,0
+Cálculo Diferencial,1,5,1,false,none
+Fundamentos de Programación,1,5,1,false,none
+Taller de Ética,1,4,1,false,none
+Matemáticas Discretas,1,5,1,false,none
+Taller de Administración,1,4,1,false,none
+Fundamentos de Investigación,1,4,1,false,none
+Actividades Complementarias,1,3,1,false,none
+Cálculo Integral,2,5,0,true,Cáculo Diferencial
+Programación Orientada a Objetos,2,5,0,true,Fundamentos de Programación
+Contabilidad Financiera,2,4,0,true,Taller de Administración
+Química,2,4,0,false,none
+Algebra Lineal,2,5,0,false,none
+Probabilidad y Estadística,2,5,0,false,none
+Actividades Complementarias,2,3,0,false,none
+Cálculo Vectorial,3,5,0,true,Cálculo Integral
+Estructura de Datos,3,5,0,true,Programación Orientada a Objetos
+Cultura Empresarial,3,4,0,true,Contabilidad Financiera
+Investigación De Operaciones,3,4,0,true,Probabilidad y Estadística
+Sistemas Operativos,3,4,0,false,none
+Física General,3,5,0,false,none
+Ecuaciones Diferenciales,4,5,0,true,Cálculo Vectorial
+Métodos Numéricos,4,4,0,true,Programación Orientada a Objetos
+Tópicos Avanzados de Programación,4,5,0,true,Estructura de Datos
+Fundamentos de Base de Datos,4,5,0,false,none
+Taller De Sistemas Operativos,4,4,0,true,Sistemas Operativos
+Principios Eléctricos y Aplicaciones Digitales,4,5,0,true,Física General
+Desarrollo Sustentable,5,5,0,false,none
+Fundamentos de Telecomunicaciones,5,4,0,false,none
+Taller de Base de Datos,5,4,0,true,Fundamentos de Base de Datos
+Simulación,5,5,0,true,Métodos Numéricos
+Fundamentos de Ingeniería de Software,5,4,0,false,none
+Arquitectura de Computadoras,5,5,0,true,Principios Eléctricos y Aplicaciones Digitales
+Lenguajes y Automatas 1,6,5,0,false,none
+Redes de Computadoras,6,5,0,true,Fundamentos de Telecomunicaciones
+Administración de Bases de Datos,6,5,0,true,Taller de Base de Datos
+Graficación,6,4,0,true,Simulación
+Ingeniería de Software,6,5,0,true,Fundamentos de Ingeniería de Software
+Lenguajes de Interfaz,6,4,0,false,none
+Fundamentos de Inteligencia de Negocios en la Gestión Empresaria,6,5,0,false,none
+Lenguajes y Automatas 2,7,5,0,true,Lenguajes y Automatas 1
+Conmutación y Enrutamiento de Redes de Datos,7,5,0,true,Redes de Computadoras
+Taller de Investigación 1,7,4,0,false,none
+Tópicos De Ciencia de Datos,7,5,0,true,Taller de Base de Datos
+Programación Web,7,5,0,true,Ingenieria de Software
+Programación Lógica y Funcional,7,4,0,false,none
+Administración de Redes,8,4,0,true,Conmutación y Enrutamiento de Redes de Datos
+Taller de Investigación 2,8,4,0,true,Taller de Investigación 1
+Gestión de Proyectos de Software,8,6,0,true,Fundamentos de Ingeniería de Software
+Desarrollo de Software Orientado a Servicios,8,5,0,true,Programación Web
+Sistemas Programables,8,4,0,false,none
+Inteligencia Artificial,9,4,0,true,Programación Lógica y Funcional
+Tecnologías Emergentes para el Desarrollo de Aplicaciones de Software,9,5,0,true,Desarrollo de Software Orientado a Servicios
+Desarrollo de Software Empresarial con Patrones de Diseño,9,5,0,true,Programación Web
+Servicio Social,9,10,0,false,none
+Residencia Profesional,9,10,0,false,none
+,0,0,0,false,none

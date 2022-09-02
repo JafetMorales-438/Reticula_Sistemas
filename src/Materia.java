@@ -35,8 +35,12 @@ public class Materia extends JButton{
         this.cadenaCon = cadenaCon;
         /* Propiedades JButton*/
         this.setText("<html><center>"+getName());
+        this.setFormat();
         this.setSize(100,50);
         this.click_status();
+        if(getStatus() == 0){
+            this.setEnabled(false);
+        }
     }
 
     /* ----------------------- Inicio de propieades de la Materia ----------------------- */
@@ -86,15 +90,15 @@ public class Materia extends JButton{
      *         <h3>Cambia la situacion de la Materia, teniendo esta 9 estados.</h3>
      *         <p>Estatus:</p>
      *         <ol>
-     *             <li>Materia no permitida.</li>
-     *             <li>Materia posible a seleccionar.</li>
-     *             <li>Cursando Materia.</li>
-     *             <li>Materia Acreditada.</li>
-     *             <li>Cursada sin acreditar.</li>
-     *             <li>Reprobada cursando.</li>
-     *             <li>A curso especial.</li>
-     *             <li>Especial cursando.</li>
-     *             <li>Curso especial reprobado.</li>
+     *             <li>0 = Materia no permitida.</li>
+     *             <li>1 = Materia posible a seleccionar.</li>
+     *             <li>2 = Cursando Materia.</li>
+     *             <li>3 = Materia Acreditada.</li>
+     *             <li>4 = Cursada sin acreditar.</li>
+     *             <li>5 = Reprobada cursando.</li>
+     *             <li>6 = A curso especial.</li>
+     *             <li>7 = Especial cursando.</li>
+     *             <li>8 = Curso especial reprobado.</li>
      *         </ol>
      *     </body>
      * </html>
@@ -102,6 +106,11 @@ public class Materia extends JButton{
      */
     public void setStatus(int status) {
         this.status = status;
+        if(getStatus() == 0){
+            this.setEnabled(false);
+        } else {
+            this.setEnabled(true);
+        }
     }
 
     /**
@@ -179,16 +188,18 @@ public class Materia extends JButton{
         btn1.setBounds(25,20,200,30);
         JRadioButton btn2 = new JRadioButton("Acreditada");
         btn2.setBounds(25,50,200,30);
-        JRadioButton btn3 = new JRadioButton("Cursada Sin Acreditar");
+        JRadioButton btn3 = new JRadioButton("Cursada: Sin Acreditar");
         btn3.setBounds(25,80,200,30);
-        JRadioButton btn4 = new JRadioButton("Reprobada Cursando");
+        JRadioButton btn4 = new JRadioButton("Reprobada: Cursando");
         btn4.setBounds(25,110,200,30);
         JRadioButton btn5 = new JRadioButton("A Curso Especial");
         btn5.setBounds(25,140,200,30);
         JRadioButton btn6 = new JRadioButton("Especial: Cursando");
         btn6.setBounds(25,170,200,30);
-        JRadioButton btn7 = new JRadioButton("Información");
+        JRadioButton btn7 = new JRadioButton("Curso Especial: Reprobado");
         btn7.setBounds(25,200,200,30);
+        JRadioButton info = new JRadioButton("Información");
+        info.setBounds(25,230,200,30);
 
         group.add(btn1);
         group.add(btn2);
@@ -197,6 +208,7 @@ public class Materia extends JButton{
         group.add(btn5);
         group.add(btn6);
         group.add(btn7);
+        group.add(info);
 
         JButton btn = new JButton("Aceptar");
         btn.setBounds(100,300,85,40);
@@ -223,10 +235,12 @@ public class Materia extends JButton{
                     setColor(225,66,66);
                     ventana2.dispose();
                 } else if (btn7.isSelected()) {
-                    JOptionPane.showMessageDialog(null, getInfo());
+                    setColor(255,0,0);
                     ventana2.dispose();
+                } else if (info.isSelected()) {
+                    JOptionPane.showMessageDialog(null, getInfo());
                 } else {
-                    JOptionPane.showMessageDialog(null, "No Seleccionaste Nada");
+                    JOptionPane.showMessageDialog(null, "Selecciona Una Opción");
                     ventana2.dispose();
                 }
             }
@@ -239,10 +253,15 @@ public class Materia extends JButton{
         ventana2.add(btn5);
         ventana2.add(btn6);
         ventana2.add(btn7);
+        ventana2.add(info);
         ventana2.add(btn);
 
         ventana2.setVisible(true);
         return ventana2;
+    }
+
+    public void setFormat(){
+        this.setFont(new Font("Arial",1,8));
     }
 
     /* ------------------------ Fin de propiedades del JButton ------------------------- */
